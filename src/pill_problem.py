@@ -24,22 +24,22 @@ class PillProblem:
                 )
             ]
 
-def objective(self, variables):
-    """Objective function, pill area"""
-    return pill_area(variables[0], variables[1])
+    def objective(self, variables):
+        """Objective function, pill area"""
+        return pill_area(variables[0], variables[1])
 
-def generate_data(self, n=1000):
-    """Generate data containing x, an array of design variables, and y, an 
-    array of objective function values"""
-    x = numpy.random.random((n, len(self.initial_solution)))
-    y = numpy.random.random((n, 1))
-    for i in range(x.shape[1]):
-        x[:, i] = x[:, i] * (self.bounds.ub[i] - self.bounds.lb[i]) + self.bounds.lb[i]
-    for i in range(x.shape[0]):
-        y[i] = self.objective(x[i, :])
-    return x, y
+    def generate_data(self, n=1000):
+        """Generate data containing x, an array of design variables, and y, an 
+        array of objective function values"""
+        x = numpy.random.random((n, len(self.initial_solution)))
+        y = numpy.random.random((n, 1))
+        for i in range(x.shape[1]):
+            x[:, i] = x[:, i] * (self.bounds.ub[i] - self.bounds.lb[i]) + self.bounds.lb[i]
+        for i in range(x.shape[0]):
+            y[i] = self.objective(x[i, :])
+        return x, y
 
-def load_data(self):
-    """Loads a curated dataset for this problem, either associated with an 
-    experiment or a specific data generation process."""
-    raise NotImplementedError("There is no dataset available for this problem.") # <<<< For other problems (e.g., LINKS), this function would load hte available dataset.
+    def load_data(self):
+        """Loads a curated dataset for this problem, either associated with an 
+        experiment or a specific data generation process."""
+        raise NotImplementedError("There is no dataset available for this problem.") # <<<< For other problems (e.g., LINKS), this function would load hte available dataset.
