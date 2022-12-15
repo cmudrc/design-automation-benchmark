@@ -2,7 +2,7 @@
 
 from setuptools import setup, find_packages
 
-setup(name='drcutils',
+setup(name='design-automation-benchmark',
       version='0.1.0',
       description='Design Automation Benchmark',
       author='The Design Research Collective',
