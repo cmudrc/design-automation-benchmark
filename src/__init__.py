@@ -31,7 +31,7 @@ def solve_matrix(problems, algorithms, number_of_reps):
                 probs.append(problem.name)
                 algos.append(problem.name)
                 reps.append(rep)
-
+                
     funs = [x.fun for x in results]
     nfevs = [x.nfev for x in results]
     nits = [x.nit for x in results]
