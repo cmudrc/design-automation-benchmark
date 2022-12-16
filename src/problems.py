@@ -2,24 +2,24 @@ import scipy.optimize # Used for solvers
 import math # Used for pi value
 import numpy # for random array generation
 
-def pill_volume(radius, length):
+def _pill_volume(radius, length):
     """Calculates pill volume, simple helper function"""
     return 4.0/3.0*math.pi*radius**3 + length*math.pi*radius**2
 
-def pill_area(radius, length):
+def _pill_area(radius, length):
     """Calculates pill area, simple helper function"""
     return 2*math.pi*radius*length + 4*math.pi*radius**2
 
 class Pill:
     """Class to contain all pill knowledge""" 
-    def __init__(self, name="pill", required_volume=1e-06, initial_solution=[0.01, 0.01]):
+    def __init__(self, name="pill", required_volume=1e-06, initial_solution=None):
         self.name = name
         self.required_volume = required_volume
-        self.initial_solution = initial_solution
+        self.initial_solution = numpy.random.rand(2)
         self.bounds = scipy.optimize.Bounds([0.0, 0.0], [1.0, 1.0])
         self.constraints = [
             scipy.optimize.NonlinearConstraint(
-                lambda x: pill_volume(x[0], x[1]), 
+                lambda x: _pill_volume(x[0], x[1]), 
                 self.required_volume, 
                 self.required_volume
                 )
@@ -27,7 +27,7 @@ class Pill:
 
     def objective(self, variables):
         """Objective function, pill area"""
-        return pill_area(variables[0], variables[1])
+        return _pill_area(variables[0], variables[1])
 
     def generate_data(self, n=1000):
         """Generate data containing x, an array of design variables, and y, an 
