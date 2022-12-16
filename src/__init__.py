@@ -19,6 +19,7 @@ def solve(problem, algorithm):
         
 def solve_matrix(problems, algorithms, number_of_reps):
     """This does the even heavier lifting - it runs matrices of problems against matrices of algorithms"""
+    import pandas
     results = []
     probs = []
     algos = []
