@@ -10,7 +10,7 @@ def pill_area(radius, length):
     """Calculates pill area, simple helper function"""
     return 2*math.pi*radius*length + 4*math.pi*radius**2
 
-class PillProblem:
+class Pill:
     """Class to contain all pill knowledge""" 
     def __init__(self, required_volume=1e-06, initial_solution=[0.01, 0.01]):
         self.required_volume = required_volume
