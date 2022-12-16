@@ -30,7 +30,7 @@ def solve_matrix(problems, algorithms, number_of_reps=1):
                 result = dab.solve(problem, algorithm)
                 results.append(result)
                 probs.append(problem.name)
-                algos.append(problem.name)
+                algos.append(algorithm.name)
                 reps.append(rep)
                 
     funs = [x.fun for x in results]
