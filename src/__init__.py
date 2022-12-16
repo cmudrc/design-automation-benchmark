@@ -1,7 +1,8 @@
-import scipy.optimize
+import problems
 
 def solve(problem, algorithm):
     """This does the heavy lifting - its where the problem and the algorithm come together"""  
+    import scipy.optimize
     if algorithm=='SLSQP' or algorithm=='trust-constr':
         return scipy.optimize.minimize(
             problem.objective, # function is the problem's objective function
