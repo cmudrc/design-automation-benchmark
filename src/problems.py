@@ -23,6 +23,9 @@ class Pill:
                 self.required_volume
                 )
             ]
+        
+    def generate_initial_solution(self):
+        return numpy.random.rand(2)
 
     def objective(self, variables):
         """Objective function, pill area"""
