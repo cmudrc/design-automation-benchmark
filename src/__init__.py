@@ -17,12 +17,24 @@ def solve(problem, algorithm):
         raise ValueError("The algorithm is not one of `SLSQP` and `trust-constr`") # currently only these two solvers work
 
         
-def solve_matrix(problems, algorithms):
+def solve_matrix(problems, algorithms, number_of_reps):
     """This does the even heavier lifting - it runs matrices of problems against matrices of algorithms"""
     results = []
+    probs = []
+    algos = []
+    reps = []
     for algorithm in algorithms:
         for problem in problems:
-            result = dab.solve(problem, algorithm)
-            results.append(result)
-    return results
+            for rep in range(number_of_reps):
+                result = dab.solve(problem, algorithm)
+                results.append(result)
+                probs.append(problem.name)
+                algos.append(problem.name)
+                reps.append(rep)
 
+    funs = [x.fun for x in results]
+    nfevs = [x.nfev for x in results]
+    nits = [x.nit for x in results]
+    messages = [x.message for x in results]
+    
+    pandas.DataFrame(list(zip(probs, algos, reps, funs, nfevs, nits, messages)), columns=["problem", "algorithm", "repetition", "fun", "nfev", "nit", "message"])
