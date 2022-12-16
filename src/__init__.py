@@ -4,7 +4,7 @@ import dab.algorithms
 def solve(problem, algorithm):
     """This does the heavy lifting - its where the problem and the algorithm come together"""  
     import scipy.optimize
-    if algorithm.name=='SLSQP' or algorithm.name=='trust-constr':
+    if type(algorithm)==dab.algorithms.SLSQP or type(algorithm)==dab.algorithms.TrustConstr:
         return scipy.optimize.minimize(
             problem.objective, # function is the problem's objective function
             problem.initial_solution,  # intial solution is also defined in the problem
