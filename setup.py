@@ -10,6 +10,5 @@ setup(name='design-automation-benchmark',
       url='https://github.com/cmudrc/design-automation-benchmark/',    
       install_requires=["numpy", "scipy"],
       packages=['dab'],
-      package_dir={'dab': 'src/*'},
-      package_data={'dab': ['data/*']},
+      package_dir={'dab': 'src'},
       )
