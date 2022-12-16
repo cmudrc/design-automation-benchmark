@@ -17,7 +17,7 @@ def solve(problem, algorithm):
         raise ValueError("The algorithm is not one of `SLSQP` and `trust-constr`") # currently only these two solvers work
 
         
-def solve_matrix(problems, algorithms, number_of_reps):
+def solve_matrix(problems, algorithms, number_of_reps=1):
     """This does the even heavier lifting - it runs matrices of problems against matrices of algorithms"""
     import pandas
     results = []
