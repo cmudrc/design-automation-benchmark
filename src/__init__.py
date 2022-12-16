@@ -38,4 +38,4 @@ def solve_matrix(problems, algorithms, number_of_reps=1):
     nits = [x.nit for x in results]
     messages = [x.message for x in results]
     
-    pandas.DataFrame(list(zip(probs, algos, reps, funs, nfevs, nits, messages)), columns=["problem", "algorithm", "repetition", "fun", "nfev", "nit", "message"])
+    return pandas.DataFrame(list(zip(probs, algos, reps, funs, nfevs, nits, messages)), columns=["problem", "algorithm", "repetition", "fun", "nfev", "nit", "message"])
