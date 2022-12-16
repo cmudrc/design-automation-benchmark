@@ -12,7 +12,7 @@ def pill_area(radius, length):
 
 class Pill:
     """Class to contain all pill knowledge""" 
-    def __init__(self, name="pill" required_volume=1e-06, initial_solution=[0.01, 0.01]):
+    def __init__(self, name="pill", required_volume=1e-06, initial_solution=[0.01, 0.01]):
         self.name = name
         self.required_volume = required_volume
         self.initial_solution = initial_solution
