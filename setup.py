@@ -8,7 +8,7 @@ setup(name='design-automation-benchmark',
       author='The Design Research Collective',
       author_email='ask-drc@andrew.cmu.edu',
       url='https://github.com/cmudrc/design-automation-benchmark/',    
-      install_requires=["numpy", "scipy"],
+      install_requires=["numpy", "scipy", "pandas"],
       packages=['dab'],
       package_dir={'dab': 'src'},
       )
