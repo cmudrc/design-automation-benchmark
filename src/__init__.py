@@ -8,7 +8,7 @@ def solve(problem, algorithm):
     if type(algorithm)==dab.algorithms.SLSQP or type(algorithm)==dab.algorithms.TrustConstr:
         return scipy.optimize.minimize(
             problem.objective, # function is the problem's objective function
-            problem.initial_solution,  # intial solution is also defined in the problem
+            problem.generate_initial_solution(),  # intial solution is also defined in the problem
             method=algorithm.name, # just a string input for right now
             bounds=problem.bounds, # get bounds from problem
             constraints=problem.constraints # get constraints from problem
