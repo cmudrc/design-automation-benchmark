@@ -1,7 +1,7 @@
 class SLSQP:
     def __init__(self):
-        True
+        self.name = "SLSQP"
     
 class TrustConstr:
     def __init__(self):
-        True
+        self.name = "trust-constr"
