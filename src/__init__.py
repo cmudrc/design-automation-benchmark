@@ -1,4 +1,4 @@
-import problems
+import dab.problems
 
 def solve(problem, algorithm):
     """This does the heavy lifting - its where the problem and the algorithm come together"""  
