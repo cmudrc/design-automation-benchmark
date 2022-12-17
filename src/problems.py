@@ -34,7 +34,7 @@ class Pill:
     def generate_data(self, n=1000):
         """Generate data containing x, an array of design variables, and y, an 
         array of objective function values"""
-        x = numpy.random.random((n, len(self.initial_solution)))
+        x = numpy.random.random((n, 2)
         y = numpy.random.random((n, 1))
         for i in range(x.shape[1]):
             x[:, i] = x[:, i] * (self.bounds.ub[i] - self.bounds.lb[i]) + self.bounds.lb[i]
